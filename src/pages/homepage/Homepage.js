@@ -5,7 +5,7 @@ import Directory from '../../components/directory/Directory';
 
 const Homepage = () => {
   return (
-    <div className="homepage">
+    <div className="homepage fix-width">
       <Directory />
     </div>
   );
