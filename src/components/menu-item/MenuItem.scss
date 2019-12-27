@@ -1,6 +1,6 @@
 .menu-item {
   min-width: 30%;
-  height: 240px;
+  height: 14.552rem;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
@@ -49,21 +49,22 @@
     background-color: rgba(#fff, 0.7);
     position: absolute;
     transition: all 0.2s;
-    font-family: 'Open Sans Condensed';
 
     .title {
+      font-family: 'Josefin Sans', sans-serif;
       font-weight: 600;
-      margin-bottom: 6px;
       font-size: 1.563rem;
+      color: var(--color-grey-dark-2);
     }
 
     .subtitle {
       font-weight: 400;
-      font-size: 1rem;
+      font-size: 0.8rem;
+      color:var(--color-grey-dark-1);
     }
   }
 }
 
 .large {
-  height: 380px;
+  height: 22.737rem;
 }

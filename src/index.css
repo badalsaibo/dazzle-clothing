@@ -4,6 +4,14 @@
   box-sizing: inherit;
 }
 
+:root {
+  --font-display: 'Josefin Sans', sans-serif;
+  --font-primary: 'Lato', sans-serif;
+  --color-grey-light: hsl(220, 3%, 60%);
+  --color-grey-dark-1: hsl(220, 3%, 33%);
+  --color-grey-dark-2: hsl(225, 4%, 20%);
+}
+
 html {
   box-sizing: border-box;
 }
