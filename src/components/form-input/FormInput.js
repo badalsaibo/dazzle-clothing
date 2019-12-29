@@ -3,13 +3,14 @@ import React from 'react';
 import './FormInput.scss';
 
 const FormInput = (props) => {
-  const { handleChange, label, ...otherProps} = props;
+  const { handleChange, label, id, ...otherProps} = props;
   return (
     <div className='group'>
       <input 
         required
         placeholder={label}
         className='form-input'
+        id={id}
         onChange={handleChange}
         {...otherProps}
       />
@@ -17,7 +18,7 @@ const FormInput = (props) => {
         label ? 
         (
           <label 
-            htmlFor={label}
+            htmlFor={id}
             className={`${otherProps.value.length ? 'shrink' : ''} form-input-label`}
           >
             {label}
