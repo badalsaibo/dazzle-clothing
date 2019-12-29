@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -8,8 +10,10 @@
   --font-display: 'Josefin Sans', sans-serif;
   --font-primary: 'Lato', sans-serif;
   --color-grey-light: hsl(220, 3%, 60%);
+
   --color-grey-dark-1: hsl(220, 3%, 33%);
   --color-grey-dark-2: hsl(225, 4%, 20%);
+  --color-grey-dark-3: hsl(220, 4%, 14%);
 }
 
 html {
@@ -19,6 +23,7 @@ html {
 
 body {
   font-family: 'Lato', sans-serif;
+  color: var(--color-grey-dark-3);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
