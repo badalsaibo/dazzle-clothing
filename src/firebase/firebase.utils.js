@@ -33,7 +33,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   const snapShot = await userRef.get();
 
   if(!snapShot.exists) {
-    const { displayName, email } = userAuth;
+    const { displayName, email } = userAuth; //displayName is null if invoked by the SignUp component
     const createdAt = new Date();
 
     try {
