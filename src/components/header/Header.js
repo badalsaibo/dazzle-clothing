@@ -1,14 +1,22 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { auth } from '../../firebase/firebase.utils';
-// Importing SVGs in React
-import { ReactComponent as Logo } from '../../assets/crown.svg';
-import './Header.scss';
+
+import CartIcon from '../cart-icon/CartIcon';
+import CartDropdown from '../cart-dropdown/CartDropdown';
 
 import { connect } from 'react-redux';
 
+// Importing SVGs in React
+import { ReactComponent as Logo } from '../../assets/crown.svg';
+
+import './Header.scss';
+
+
+
 const Header = (props) => {
-  const { currentUser } = props;
+  const { currentUser, hidden } = props;
   return (
     <div className='header'>
       <Link to='/'className='logo-container'>
@@ -25,16 +33,22 @@ const Header = (props) => {
             :
             <li><Link className='option' to='/signin'>Sign In</Link></li>
           }
+          <li><CartIcon /></li>
         </ul>
       </nav>
+      { 
+        hidden ? null : <CartDropdown />
+      }
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.user.currentUser
+    currentUser: state.user.currentUser,
+    hidden: state.cart.hidden
   };
 }
+
 
 export default connect(mapStateToProps)(Header);
