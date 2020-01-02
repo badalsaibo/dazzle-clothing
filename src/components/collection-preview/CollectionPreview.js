@@ -14,9 +14,7 @@ const CollectionPreview = ({ title, items}) => {
           .map( (item) => (
             <CollectionItem 
               key={item.id}
-              price={item.price}
-              name={item.name}
-              imageUrl={item.imageUrl}
+              item={item}
             />
           ))
         }

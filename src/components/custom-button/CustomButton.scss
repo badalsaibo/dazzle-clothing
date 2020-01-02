@@ -28,4 +28,14 @@
       border: 1px solid currentColor;
     }
   }
+
+  &.inverted {
+    background-color: white;
+    color: var(--color-grey-dark-2);
+
+    &:hover {
+      background-color: var(--color-grey-dark-2);
+      color: white;
+    }
+  }
 }

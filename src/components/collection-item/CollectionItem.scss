@@ -4,6 +4,7 @@
   flex-direction: column;
   height: 36.38rem;
   align-items: center;
+  position: relative;
 
   .image {
     width: 100%;
@@ -28,5 +29,22 @@
     .price {
       width: 10%;
     }
+  }
+
+  &:hover {
+    .image {
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: block;
+    }
+  }
+
+  .btn {
+    position: absolute;
+    top: 70%;
+    opacity: 0.8;
+    display: none;
   }
 }
