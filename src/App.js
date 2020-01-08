@@ -1,13 +1,18 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import Homepage from './pages/homepage/Homepage';
 import ShopPage from './pages/shop/ShopPage';
-import SignInAndSignUpPage from './pages/sign-in-and-sign-up/SignInAndSignUpPage'
+import SignInAndSignUpPage from './pages/sign-in-and-sign-up/SignInAndSignUpPage';
+import Checkout from './pages/checkout/Checkout';
+
 import Header from './components/header/Header';
+
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
-import { connect } from 'react-redux';
 import setCurrentUser from './redux/user/user-actions';
+import { selectCurrentUser } from './redux/user/user-selectors';
 
 import './App.css';
 
@@ -15,13 +20,13 @@ class App extends React.Component {
   constructor() {
     super();
     this.unSubscribeFromAuth = null;
-  }
+  };
   
   componentDidMount() {
 
     const { setCurrentUser } = this.props;
 
-    console.log("I'm mounted")
+    console.log("I'm mounted");
 
     this.unSubscribeFromAuth = auth.onAuthStateChanged( async (userAuth) => {   // attaching an async callback function
       if(userAuth) {
@@ -36,11 +41,11 @@ class App extends React.Component {
         setCurrentUser(userAuth);
       }
     });
-  }
+  };
 
   componentWillUnmount() {
     this.unSubscribeFromAuth();
-  }
+  };
 
   render() {
     return (
@@ -57,16 +62,16 @@ class App extends React.Component {
                             : <SignInAndSignUpPage />
             } 
           />
+          <Route exact path='/checkout' component={Checkout}/>
         </Switch>
       </>
     );
-  }
+  };
 };
 
 const mapStateToProps = (state) => {
-  const { user } = state;
   return {
-    currentUser: user.currentUser,
+    currentUser: selectCurrentUser(state),
   };
 };
 

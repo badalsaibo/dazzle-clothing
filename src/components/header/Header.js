@@ -1,12 +1,13 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
-import { auth } from '../../firebase/firebase.utils';
+import { connect } from 'react-redux';
 
+import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/CartIcon';
 import CartDropdown from '../cart-dropdown/CartDropdown';
+import { selectCartHidden } from '../../redux/cart/cart-selectors';
+import { selectCurrentUser } from '../../redux/user/user-selectors';
 
-import { connect } from 'react-redux';
 
 // Importing SVGs in React
 import { ReactComponent as Logo } from '../../assets/crown.svg';
@@ -45,8 +46,8 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.user.currentUser,
-    hidden: state.cart.hidden
+    currentUser: selectCurrentUser(state),
+    hidden: selectCartHidden(state)
   };
 }
 
