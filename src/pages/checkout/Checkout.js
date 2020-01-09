@@ -28,7 +28,7 @@ const Checkout = (props) => {
         )
       }
       <div className='total'>
-        Total: ${total}
+        <span className='total-text'>Total: </span> ${total}
       </div>
     </div>
   );

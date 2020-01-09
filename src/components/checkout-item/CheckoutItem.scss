@@ -7,6 +7,7 @@
 
   & > ul {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     list-style: none;
   }
@@ -26,8 +27,21 @@
     width: 23%;
   }
 
+  .remove {
+    width: 8%;
+  }
+
   .quantity {
-    padding-left: 2rem;
+    display: flex;
+    padding-left: 1rem;
+
+    .value {
+      margin: 0 1rem;
+    }
+
+    .arrow {
+      cursor: pointer;
+    }
   }
 
   .price {
