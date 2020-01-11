@@ -5,9 +5,9 @@ import { selectCartItems, selectCartTotal } from '../../redux/cart/cart-selector
 
 import CheckoutItem from '../../components/checkout-item/CheckoutItem';
 
-import './Checkout.scss';
+import './CheckoutPage.scss';
 
-const Checkout = (props) => {
+const CheckoutPage = (props) => {
 
   const { cartItems, total } = props;
 
@@ -41,4 +41,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Checkout);
+export default connect(mapStateToProps)(CheckoutPage);
