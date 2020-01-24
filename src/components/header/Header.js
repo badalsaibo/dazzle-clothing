@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utils';
@@ -12,35 +11,34 @@ import { selectCurrentUser } from '../../redux/user/user-selectors';
 // Importing SVGs in React
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
-import './Header.scss';
 
-
+import { HeaderContainer, LogoContainer, NavContainer, OptionsContainer, OptionLink } from './Header.styled';
 
 const Header = (props) => {
   const { currentUser, hidden } = props;
   return (
-    <div className='header'>
-      <Link to='/'className='logo-container'>
+    <HeaderContainer>
+      <LogoContainer to='/'>
         <Logo className='logo' />
-      </Link>
+      </LogoContainer>
     
-      <nav className='nav'>
-        <ul className='options'>
-          <li><Link className='option' to='/shop'>Shop</Link></li>
-          <li><Link className='option' to='/contact'>Contact</Link></li>
+      <NavContainer>
+        <OptionsContainer>
+          <li><OptionLink to='/shop'>Shop</OptionLink></li>
+          <li><OptionLink to='/contact'>Contact</OptionLink></li>
           {
             currentUser ?
-            <li><div className='option' onClick={() => auth.signOut()}>Sign Out</div></li>
+            <li><OptionLink as='div' onClick={() => auth.signOut()}>Sign Out</OptionLink></li>
             :
-            <li><Link className='option' to='/signin'>Sign In</Link></li>
+            <li><OptionLink to='/signin'>Sign In</OptionLink></li>
           }
           <li><CartIcon /></li>
-        </ul>
-      </nav>
+        </OptionsContainer>
+      </NavContainer>
       { 
         hidden ? null : <CartDropdown />
       }
-    </div>
+    </HeaderContainer>
   );
 };
 

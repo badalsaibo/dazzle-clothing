@@ -1,13 +1,16 @@
 import React from 'react';
-import './CollectionPreview.scss';
+
+// import './CollectionPreview.scss';
 
 import CollectionItem from '../collection-item/CollectionItem';
 
+import { CollectionPreviewContainer, Title, Preview } from './CollectionPreview.styled';
+
 const CollectionPreview = ({ title, items}) => {
   return (
-    <div className='collection-preview'>
-      <h1 className='title'>{title}</h1>
-      <div className='preview'>
+    <CollectionPreviewContainer>
+      <Title>{title}</Title>
+      <Preview>
         {
           items
           .filter( (item, idx) => idx < 4)
@@ -18,8 +21,8 @@ const CollectionPreview = ({ title, items}) => {
             />
           ))
         }
-      </div>
-    </div>
+      </Preview>
+    </CollectionPreviewContainer>
   );
 }
 
