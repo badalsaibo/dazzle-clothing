@@ -1,9 +1,13 @@
 import React from 'react';
-import FormInput from '../form-input/FormInput';
-import CustomButton from '../custom-button/CustomButton';
+
 import { signInWithGoogle, auth } from '../../firebase/firebase.utils';
 
-import './SignIn.scss';
+import FormInput from '../form-input/FormInput';
+import CustomButton from '../custom-button/CustomButton';
+
+// import './SignIn.scss';
+
+import { SignInContainer, SignInTitle, SignInSubTitle, ButtonsContainer } from './SignIn.styled';
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -12,15 +16,15 @@ class SignIn extends React.Component {
       email: '',
       password: ''
     }
-  }
+  };
 
-  // Using arrow functions for binding this to proper context
+  // Using arrow functions for binding 'this' to proper context
   handleChange = (event) => {
     const { value, name } = event.target;
     this.setState({
       [name]: value,
     });
-  }
+  };
 
   handleSubmit = async (event) => {
     event.preventDefault();
@@ -38,13 +42,13 @@ class SignIn extends React.Component {
     } catch (error) {
       console.log(error);
     }
-  }
+};
 
   render() {
     return (
-      <div className='sign-in'>
-        <h2 className='title'>I already have an account</h2>
-        <span className='subtitle'>Sign in with your email and password</span>
+      <SignInContainer>
+        <SignInTitle>I already have an account</SignInTitle>
+        <SignInSubTitle>Sign in with your email and password</SignInSubTitle>
         <form onSubmit={this.handleSubmit}>
           <FormInput 
             label='Email'
@@ -52,7 +56,7 @@ class SignIn extends React.Component {
             type='email' 
             value={this.state.email} 
             handleChange={this.handleChange} 
-            name='email'        // For re-usability purpose
+            name='email'        // For re-usability purpose of handler function
           />
 
           <FormInput 
@@ -61,20 +65,21 @@ class SignIn extends React.Component {
             type='password' 
             value={this.state.password} 
             handleChange={this.handleChange} 
-            name='password'        // For re-usability purpose
+            name='password'        // For re-usability purpose of handler function
           />
 
-          <div className='buttons'>
+          <ButtonsContainer>
             <CustomButton type='submit'>Sign In</CustomButton>
             <CustomButton 
+              type='submit'
               onClick={signInWithGoogle}
               isGoogleSignIn
             >
               Sign In With Google
             </CustomButton>
-          </div>
+          </ButtonsContainer>
         </form>
-      </div>
+      </SignInContainer>
     );
   }
 }

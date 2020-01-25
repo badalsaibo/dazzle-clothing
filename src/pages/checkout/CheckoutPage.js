@@ -6,40 +6,47 @@ import { selectCartItems, selectCartTotal } from '../../redux/cart/cart-selector
 import CheckoutItem from '../../components/checkout-item/CheckoutItem';
 import StripeCheckoutButton from '../../components/stripe-checkout-button/StripeCheckoutButton';
 
-import './CheckoutPage.scss';
+// import './CheckoutPage.scss';
+
+import {
+  CheckOutPageContainer,
+  CheckOutHeader,
+  HeaderBlock,
+  TotalPriceContainer,
+  TotalPriceText,
+  TestText
+} from './CheckoutPage.styled';
 
 const CheckoutPage = (props) => {
 
   const { cartItems, total } = props;
 
   return (
-    <div className='checkout-page'>
-      <div className='checkout-header'>
-        <ul>
-          <li className='header-block'>Product</li>
-          <li className='header-block'>Description</li>
-          <li className='header-block'>Quantity</li>
-          <li className='header-block'>Price</li>
-          <li className='header-block'>Remove</li>
-        </ul>
-      </div>
+    <CheckOutPageContainer>
+      <CheckOutHeader>
+          <HeaderBlock>Product</HeaderBlock>
+          <HeaderBlock>Description</HeaderBlock>
+          <HeaderBlock>Quantity</HeaderBlock>
+          <HeaderBlock>Price</HeaderBlock>
+          <HeaderBlock>Remove</HeaderBlock>
+      </CheckOutHeader>
       {
         cartItems.map( (cartItem) =>
           <CheckoutItem key={cartItem.id} cartItem={cartItem}/>
         )
       }
-      <div className='total'>
-        <span className='total-text'>Total: </span> ${total}
-      </div>
+      <TotalPriceContainer>
+        <TotalPriceText>Total: </TotalPriceText> ${total}
+      </TotalPriceContainer>
 
-      <div className='test-warning'>
+      <TestText>
         * Use this following test credit card for payment *
         <br />
         4242 4242 4242 4242 | Exp: 01 / 20 | CVV: 123
-      </div>
+      </TestText>
 
       <StripeCheckoutButton price={total}/>
-    </div>
+    </CheckOutPageContainer>
   );
 };
 

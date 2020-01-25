@@ -5,7 +5,6 @@ import React from 'react';
 import { CustomButtonContainer } from './CustomButton.styled';
 
 const CustomButton = ({ children, ...otherProps}) => {
-  console.log(otherProps)
   return (
     <CustomButtonContainer {...otherProps}>
       {children}

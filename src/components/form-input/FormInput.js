@@ -1,15 +1,16 @@
 import React from 'react';
 
-import './FormInput.scss';
+// import './FormInput.scss';
+
+import { InputGroup, StyledInput, StyledInputLabel } from './FormInput.styled';
 
 const FormInput = (props) => {
   const { handleChange, label, id, ...otherProps} = props;
   return (
-    <div className='group'>
-      <input 
+    <InputGroup>
+      <StyledInput 
         required
         placeholder={label}
-        className='form-input'
         id={id}
         onChange={handleChange}
         {...otherProps}
@@ -17,16 +18,16 @@ const FormInput = (props) => {
       {
         label ? 
         (
-          <label 
+          <StyledInputLabel 
             htmlFor={id}
-            className={`${otherProps.value.length ? 'shrink' : ''} form-input-label`}
+            className={`${otherProps.value.length ? 'shrink' : ''}`}
           >
             {label}
-          </label>
+          </StyledInputLabel>
         )
         : null
       }
-    </div>
+    </InputGroup>
   );
 }
 

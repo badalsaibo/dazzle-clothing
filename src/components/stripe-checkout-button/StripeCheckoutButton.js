@@ -7,7 +7,7 @@ const StripeCheckoutButton = ({ price }) => {
 
   const onToken = (token) => {
     alert('Payment Successful');
-  }
+  };
 
   return (
     <StripeCheckout
