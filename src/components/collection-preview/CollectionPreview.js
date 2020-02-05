@@ -11,7 +11,7 @@ const CollectionPreview = ({ title, items}) => {
       <Preview>
         {
           items
-          .filter( (item, idx) => idx < 4)
+          .filter( (item, idx) => idx < 4) // filter for how many products needs to be displayed
           .map( (item) => (
             <CollectionItem 
               key={item.id}
