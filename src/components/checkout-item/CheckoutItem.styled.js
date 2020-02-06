@@ -25,6 +25,10 @@ export const ItemImage = styled.li`
 
 export const ItemName = styled.li`
   width: 23%;
+
+  @media only screen and (max-width: 44em) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const QuantityContainer = styled.li`

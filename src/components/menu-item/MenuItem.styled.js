@@ -30,6 +30,10 @@ export const MenutItemContainer = styled.div`
       background-color: hsla(0, 0%, 100%, 0.9);
     }
   }
+
+  @media only screen and (max-width: 44em) {
+    height: 27.338rem;
+  }
 `;
 
 export const BackgroundImage = styled.div`

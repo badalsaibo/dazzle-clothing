@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 export const SignInContainer = styled.div`
   width: 30vw;
+
+  @media only screen and (max-width: 44em) {
+    width: 100%;
+    margin-bottom: 6.1rem;
+  }
 `;
 
 export const SignInTitle = styled.h1`

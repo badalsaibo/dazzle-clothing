@@ -19,6 +19,22 @@ export const CollectionItemContainer = styled.div`
       display: flex;
     }
   }
+
+  @media only screen and (max-width: 44em) {
+    width: 40vw;
+    padding: 0;
+    margin-bottom: 2rem;
+
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+  
+      button {
+        display: unset;
+      }
+    }
+  }
 `;
 
 export const CollectionImage = styled.div`
@@ -26,7 +42,7 @@ export const CollectionImage = styled.div`
   height: 95%;
   background-size: cover;
   background-position: center;
-  margin-bottom: 0.524rem;
+  margin-bottom: 1rem;
   background-image: ${ (props) => `url(${props.imageUrl})`};
 `;
 
@@ -37,6 +53,9 @@ export const CollectionFooter = styled.div`
   justify-content: space-between;
   font-size: 1.6rem;
   color: var(--color-grey-dark-2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
 `;
 
 export const NameContainer = styled.span`
@@ -52,4 +71,12 @@ export const AddButton = styled(CustomButton)`
   top: 70%;
   opacity: 0.8;
   display: none;
+
+  @media only screen and (max-width: 44em),
+  (hover: none) {
+    display: block;
+    opacity: 0.9;
+    padding: 1.6rem 2.0rem;
+    font-size: 1.4rem;
+  }
 `

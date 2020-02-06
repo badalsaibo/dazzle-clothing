@@ -24,4 +24,8 @@ export const CartIconItemCount = styled.span`
   font-weight: bold;
   bottom: 14px;
   font-family: inherit;
+
+  @media only screen and (max-width: 55em) {
+    bottom: 10px;
+  }
 `;

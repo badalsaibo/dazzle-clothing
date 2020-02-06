@@ -19,4 +19,10 @@ export const CollectionItems = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-row-gap: 3rem;
   grid-column-gap: 2rem;
+
+  @media only screen and (max-width: 44em) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0;
+    justify-items: center;
+  }
 `;

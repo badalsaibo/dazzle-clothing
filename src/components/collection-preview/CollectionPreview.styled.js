@@ -4,6 +4,10 @@ export const CollectionPreviewContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 6.104rem;
+
+  @media only screen and (max-width: 44em) {
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h1`
@@ -18,4 +22,10 @@ export const Title = styled.h1`
 export const Preview = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 44em) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.6rem;
+  }
 `

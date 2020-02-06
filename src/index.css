@@ -26,9 +26,16 @@ body {
   color: var(--color-grey-dark-3);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media only screen and (max-width: 55em) {
+  html {
+    font-size: 50%;
+  }
 }

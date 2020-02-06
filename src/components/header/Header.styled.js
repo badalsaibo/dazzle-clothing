@@ -14,6 +14,10 @@ export const LogoContainer = styled(Link)`
   height: 100%;
   width: 7rem;
   padding: 2.5rem;
+
+  @media only screen and (max-width: 44em) {
+    padding: 1rem;
+  }
 `;
 
 export const OptionsContainer = styled.ul`
@@ -35,8 +39,16 @@ export const OptionLink = styled(Link)`
     text-decoration: none;
     color: var(--color-grey-dark-2);
   }
+
+  @media only screen and (max-width: 44em) {
+    padding: 1rem;
+  }
 `;
 
 export const NavContainer = styled.nav`
-  width: 50%
+  width: 50%;
+
+  @media only screen and (max-width: 44em) {
+    width: 80%;
+  }
 `;

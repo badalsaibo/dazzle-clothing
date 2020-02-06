@@ -12,6 +12,10 @@ export const CheckOutPageContainer = styled.div`
     margin-left: auto;
     margin-top: 6.1rem;
   }
+
+  @media only screen and (max-width: 44em) {
+    width: auto
+  }
 `;
 
 export const CheckOutHeader = styled.ul`
@@ -26,6 +30,10 @@ export const CheckOutHeader = styled.ul`
   display: flex;
   justify-content: space-between;
   list-style: none;
+
+  @media only screen and (max-width: 44em) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const HeaderBlock = styled.li`
@@ -42,6 +50,8 @@ export const TotalPriceContainer = styled.div`
   margin-left: auto;
   font-size: 3.125rem;
   text-transform: uppercase;
+  font-family: var(--font-display);
+  font-weight: 600;
 `;
 
 export const TotalPriceText = styled.span`
@@ -55,5 +65,9 @@ export const TestText = styled.div`
   font-size: 2.0rem;
   color: hsl(0, 100%, 66%);
   line-height: 1.4;
+
+  @media only screen and (max-width: 44em) {
+    font-size: 1.6rem;
+  }
 `;
 
